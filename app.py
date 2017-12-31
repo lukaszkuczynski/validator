@@ -3,4 +3,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, Validator!'
+    return 'Hello, Validator, CD pipeline test!'
