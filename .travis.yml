@@ -1,5 +1,12 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 script:
-  - pytest
+- pytest
+deploy:
+  provider: heroku
+  api_key:
+    secure: vGgtRnIxVoWXtDvBean1zdOphdYdH+t9MmuMaSw/1b7R+CmVoNe72kDKF725NPnGKfd6GGsW3/Hv55KN93VSPB2jEh2xsevzAl42qpdqVUwp+KklO5KWE2KGTflo7hlUjt6Jk+Tf5Ou5W4goBzTloa6wh5gJuJFC0MzQvzpML4OhnqOk+lxGO8WR/l8VaELbVZX/3xrix5cEg4rnDiwXEUGU5Bee8G2+vA9f6d93z0DNyz22sv8Xn26Q2Xs0fbsOo7j8GPOgvarnUYs7sqyx1hPbbfljwTz3LJN8n8cAGSXvnAVDRx2Zc5CzdWYtbnfrDABU0iA8ALzKAH9toWBoB4ta+XfTTeiPNStxlCM9zfqjQk3ZnQJDSU2gE3vMpZaA0Muzo0yAZK1Lwd5Qyu+pXSYXkrc1Lj+jT/bpzxx0ZUf+RgS7bUzC73IBaAl/5kjylLEi7GZpJtaApNAHzgsbr3DzAaFdbYIIOe5TPKmIznUgOKjru3ZTOSYa4cMB7wyXwKGJH3lLLG/Xz80ox6/VGWDm/RLdPafAh1e7q6PcfsUHLALx9y0OvIILIf5E3W3+lILLn1jQDox8z+PQosDtg88F/thiHOiuS7Wl1PpQZa0J2Oc30MKZvnZ9ZHigXFVwzBFAEYPTgf1yr4GiXO8YEG0LhOpvWsoY59CDD1bCe+w=
+  app: validator
+  on:
+    repo: lukaszkuczynski/validator
