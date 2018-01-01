@@ -40,14 +40,14 @@ class RuleFactoryTest(TestCase):
     def test_factory_for_wrong_type_throws_Exception(self):
         factory = RuleFactory()
         try:
-            factory.for_definition({})
+            factory.for_definition({'type': 'None'})
             self.fail("Shoul throw an exception for empty or unknown definition")
         except Exception as e:
             self.assertIsInstance(e, NotImplementedError)
 
     def test_factory_should_resolve_all_rule_types(self):
         factory = RuleFactory()
-        not_null = factory.for_definition({'not_null': {"fields": []}})
+        not_null = factory.for_definition({'type': 'not_null', "fields": []})
         self.assertIsInstance(not_null, NotNullRule)
-        not_null = factory.for_definition({'missing': {"fields": []}})
+        not_null = factory.for_definition({'type': 'missing', "fields": []})
         self.assertIsInstance(not_null, MissingFieldRule)

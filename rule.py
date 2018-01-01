@@ -10,10 +10,10 @@ class RuleFactory:
 
 
     def for_definition(self, dict):
-        if 'not_null' in dict:
-            return NotNullRule(dict['not_null'])
-        elif 'missing' in dict:
-            return MissingFieldRule(dict['missing'])
+        if dict['type'] == 'not_null':
+            return NotNullRule(dict)
+        elif dict['type'] == 'missing':
+            return MissingFieldRule(dict)
         else:
             raise NotImplementedError("No valid type for rule given.")
 
